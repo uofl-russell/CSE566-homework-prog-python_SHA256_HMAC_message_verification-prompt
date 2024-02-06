@@ -1,18 +1,13 @@
 import requests
 import sys 
-import hashlib
-import hmac
+# missing some import statements 
 
 message = str(sys.argv[1])
 encoded_message = message.encode('utf-8')
-API_SECRET = "892374928347928347283473".encode('utf-8')
-signature = str(hmac.new(
-    API_SECRET, 
-    msg=encoded_message, 
-    digestmod=hashlib.sha256
-).hexdigest())
+API_SECRET = "notcorrectapikey".encode('utf-8') #get this from README
+signature = "notacorrecthash" #implement code to calculate this...see video
 
-url = 'https://api.abstractclassroom.com/teaching/CSE566'
+url = 'put api address here'
 myobj = {
     'message': message, 
     'signature': signature
